@@ -1,0 +1,140 @@
+NAT offers a range of built-in functions (see below). NAT is extendable. We can create our own functions. This section will create an example function that can then be integrated inside the config.yml
+
+Show what built-in functions are available and what arguments they take
+nat info components -t function
+
+Use this to query a single function
+nat info components -t function -q router_agent
+
+Show all built-in llm_provider option
+nat info components -t llm_provider
+
+This is the full list of "components" include:
+- auth_provider
+- dataset_loader
+- embedder_client
+- embedder_provider
+- evaluator
+- front_end
+- function
+- function_group
+- middleware
+- ttc_strategy
+- llm_client
+- llm_provider
+- logging
+- object_store
+- package
+- registry_handler
+- retriever_client
+- tool_wrapper
+- tracing
+
+"nat create" creates the boiler-plate to create a new function:
+mkdir getjoke
+nat workflow create --workflow-dir getjoke get_joke
+dir /s
+edit getjoke/get_joke/src/get_joke/get_joke.py
+
+In my case:
+
+------ START -----
+import logging
+
+from pydantic import Field
+
+from nat.plugin_api import Builder
+from nat.plugin_api import FunctionBaseConfig
+from nat.plugin_api import FunctionInfo
+from nat.plugin_api import LLMFrameworkEnum
+from nat.plugin_api import register_function
+
+logger = logging.getLogger(__name__)
+
+
+class GetJokeFunctionConfig(FunctionBaseConfig, name="get_joke"):
+    #prefix: str = Field(default="Echo:", description="Prefix to add before the echoed text.")
+    mood: str = Field(default="bad", description="Bad if not in the mood for jokes.")
+    capitalize: bool = Field(default=False, description="Whether to capitalize the response text.")
+
+
+@register_function(config_type=GetJokeFunctionConfig, framework_wrappers=[LLMFrameworkEnum.LANGCHAIN])
+async def get_joke_function(config: GetJokeFunctionConfig, builder: Builder):
+    """
+    Registers the function. It will be addressable via `get_joke` in the configuration.
+
+    Args:
+        config (GetJokeFunctionConfig): The configuration for the function.
+        builder (Builder): The builder object.
+
+    Returns:
+        FunctionInfo: The function info object for the function.
+    """
+
+    # Define the function that will be registered.
+    async def _get_joke(mood: str, capitalize: bool) -> str:
+        """
+        Takes a mood and capitalize flag and returns a joke or a message based on the mood.
+
+        Args:
+            mood (str): The user's mood.
+            capitalize (bool): Whether to capitalize the response.
+
+        Returns:
+            str: The joke or a message based on the mood.
+        """
+        jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you call a fake noodle? An impasta!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "How does a penguin build its house? Igloos it together!",
+            "Why did the bicycle fall over? Because it was two-tired!"
+            ]
+        if mood == "bad":
+            joke = "I am not in the mood for jokes right now."
+        else:
+            # pick a random joke from the list
+            import random
+            joke = random.choice(jokes)
+
+        return joke.upper() if capitalize else joke
+
+    # The callable is wrapped in a FunctionInfo object.
+    # The description parameter is used to describe the function.
+    yield FunctionInfo.from_fn(_get_joke, description=_get_joke.__doc__)
+----- END -----
+
+This is the config.yml
+----- START -----
+functions:
+  current_datetime:
+    _type: current_datetime
+  get_joke:
+    _type: get_joke
+    mood: "good"
+    capitalize: false
+
+llms:
+  ollama_llm:
+    _type: openai
+    model: gemma4:e4b
+    base_url: http://localhost:11434/v1
+    api_key: ollama
+    temperature: 0.5
+
+workflow:
+  _type: react_agent
+  llm_name: ollama_llm
+  tool_names: [current_datetime, get_joke]
+  verbose: true
+  parse_agent_response_max_retries: 3
+----- END -----
+
+After the modifications we need to reinstall the workflow:
+cd get_joke
+nat workflow reinstall get_joke
+uv pip install -e get_joke
+
+nat run --config_file .\get_joke\configs\config.yml --input "Morning. I am in a good mood today. Can you tell me a joke?"
+
+

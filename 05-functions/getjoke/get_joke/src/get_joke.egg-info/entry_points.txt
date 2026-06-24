@@ -1,0 +1,2 @@
+[nat.components]
+get_joke = get_joke.register

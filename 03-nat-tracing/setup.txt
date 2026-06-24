@@ -1,0 +1,14 @@
+install dependencies. The second one is the Phoenix server itself
+uv add "nvidia-nat[phoenix]" arize-phoenix
+
+Start the Phoenix server
+arize-phoenix
+
+Make sure to add a general /telemetry / tracing section to the config.yml.
+- Match the Phoenix server's URL
+- specify a "project" to put the traces on
+
+Start querying the workflow as usual
+nat run --config_file config2.yml --input "what colour is the sky?"
+
+

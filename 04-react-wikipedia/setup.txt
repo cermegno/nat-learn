@@ -1,0 +1,5 @@
+Show what built-in functions are available and what arguments they take
+nat info components -t function
+
+Use this to query a single function
+nat info components -t function -q router_agent

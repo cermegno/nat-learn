@@ -1,0 +1,4 @@
+mkdir nat-learn
+cd nat-learn
+uv init
+uv add nvidia-nat "nvidia-nat[langchain]"

@@ -1,0 +1,5 @@
+nat serve --config_file config.yml --host 0.0.0.0
+
+point web browser to http://127.0.0.1:8000/docs
+
+"python test.py" to test the server is responding

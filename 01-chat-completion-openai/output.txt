@@ -1,0 +1,39 @@
+(.venv) PS C:\Users\DELL\Desktop\nat-learn\01-chat-completion-openai> nat run --config_file config.yml --input "what colour is the sky?"
+2026-06-23 11:07:23 - INFO     - nat.cli.commands.start:192 - Starting NAT from config file: 'config.yml'
+
+Configuration Summary:
+--------------------
+Workflow Type: chat_completion
+Number of Functions: 0
+Number of Function Groups: 0
+Number of LLMs: 1
+Number of Embedders: 0
+Number of Memory: 0
+Number of Object Stores: 0
+Number of Retrievers: 0
+Number of TTC Strategies: 0
+Number of Authentication Providers: 0
+
+2026-06-23 11:07:25 - INFO     - nat.runtime.session:329 - Shared workflow built (entry_function=None)
+2026-06-23 11:07:45 - INFO     - httpx:1740 - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+C:\Users\DELL\Desktop\nat-learn\.venv\Lib\site-packages\nat\builder\function.py:380: LangChainDeprecationWarning: Calling .text() as a method is deprecated. Use .text as a property instead (e.g., message.text).
+  return await self._ainvoke_fn(value)
+2026-06-23 11:07:45 - INFO     - nat.front_ends.console.console_front_end_plugin:161 - --------------------------------------------------
+Workflow Result:
+The sky can be almost *any* color, depending on the time of day, the weather, and the atmosphere around you!
+
+However, the most common answer is **blue**.
+
+Here is a breakdown of the different colors you might see:
+
+### ☀️ During the Day (The Blue)
+*   **Blue:** This is the typical color you see on a clear, sunny day. This is due to a process called **Rayleigh scattering**, where the Earth's atmosphere scatters shorter wavelengths of sunlight (blue and violet) more effectively than longer wavelengths (red and orange).
+
+### 🌅 At Sunrise and Sunset (The Warm Tones)
+*   **Red, Orange, Pink, Yellow:** When the sun is near the horizon, its light has to travel through much more of the Earth's atmosphere. During this long journey, most of the blue light gets scattered away, leaving the longer wavelengths-the reds, oranges, and yellows-to reach your eyes.
+
+### ☁️ When the Weather Changes
+*   **Gray or White:** If it is heavily overcast, the clouds spread out the sunlight, making the sky appear a uniform, muted gray or white.
+*   **Deep Indigo/Dark Blue:** Sometimes, just before a storm, the sky can take on a very deep, dramatic blue or indigo color.
+
+**So, to summarize:** If you're looking up right now, what color do you see? That's the most accurate answer!

@@ -1,0 +1,10 @@
+pyproject.toml
+src/get_joke/__init__.py
+src/get_joke/get_joke.py
+src/get_joke/register.py
+src/get_joke.egg-info/PKG-INFO
+src/get_joke.egg-info/SOURCES.txt
+src/get_joke.egg-info/dependency_links.txt
+src/get_joke.egg-info/entry_points.txt
+src/get_joke.egg-info/requires.txt
+src/get_joke.egg-info/top_level.txt

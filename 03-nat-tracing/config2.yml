@@ -1,0 +1,21 @@
+llms:
+  ollama_llm:
+    _type: openai
+    model: gemma4:e4b
+    base_url: http://localhost:11434/v1
+    api_key: ollama # dummy string
+    #temperature: 0.7
+    #max_tokens: 2048
+
+workflow:
+  type: chat_completion 
+  llm_name: ollama_llm
+  system_prompt: "You are a helpful assistant."
+
+general:                                              # Global workflow settings
+  telemetry:                                          # Monitoring and metrics
+    tracing:                                          # Distributed tracing config
+      phoenix:                                        # Phoenix-specific settings
+        _type: phoenix                                # Use Phoenix provider
+        endpoint: http://localhost:6006/v1/traces     # Where to send data
+        project: nat_tracing_101            # Project name in UI

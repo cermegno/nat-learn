@@ -1,0 +1,22 @@
+functions:
+  current_datetime:
+    _type: current_datetime
+  get_joke:
+    _type: get_joke
+    mood: "good"
+    capitalize: false
+
+llms:
+  ollama_llm:
+    _type: openai
+    model: gemma4:e4b
+    base_url: http://localhost:11434/v1
+    api_key: ollama
+    temperature: 0.5
+
+workflow:
+  _type: react_agent
+  llm_name: ollama_llm
+  tool_names: [current_datetime, get_joke]
+  verbose: true
+  parse_agent_response_max_retries: 3

@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "answer": "The capital of France is Paris.",
+    "id": "",
+    "generated_answer": "The capital of France is **Paris**.",
+    "intermediate_steps": [],
+    "expected_intermediate_steps": []
+  },
+  {
+    "question": "Who discovered penicillin?",
+    "answer": "Alexander Fleming discovered penicillin.",
+    "id": "",
+    "generated_answer": "The discovery of penicillin is famously credited to **Sir Alexander Fleming**.\n\nIn **1928**, Fleming, a bacteriologist at St. Mary's Hospital in London, noticed that a mold (specifically *Penicillium notatum*) had contaminated one of his petri dishes containing *Staphylococcus* bacteria. He observed that the mold was preventing the surrounding bacteria from growing—an effect he named **antibiosis**.\n\n**However, it's important to note a nuance in the full story:**\n\nWhile Fleming discovered penicillin and proved its antibacterial properties, it wasn't until a decade later that the drug became a practical medicine. The crucial work of **Sir Howard Florey** and **Ernst Chain** was necessary to purify, stabilize, and mass-produce penicillin.\n\n* **Fleming:** Discovered the substance.\n* **Florey & Chain:** Developed it into a usable drug and demonstrated its effectiveness in treating systemic infections.\n\nBecause all three individuals' contributions were so monumental, **Fleming, Florey, and Chain were jointly awarded the Nobel Prize in Physiology or Medicine in 1945** for their discoveries.",
+    "intermediate_steps": [],
+    "expected_intermediate_steps": []
+  },
+  {
+    "question": "What is the largest mammal?",
+    "answer": "The largest mammal is the blue whale.",
+    "id": "",
+    "generated_answer": "The title for the largest mammal belongs to the **Blue Whale** (*Balaenoptera musculus*).\n\nBlue whales are colossal creatures and are generally considered the largest animals known to have ever existed, making them both the largest mammal and the largest animal by mass.\n\nHere is a detailed breakdown of their size and how they compare to other large mammals:\n\n---\n\n### 🐋 The Blue Whale (Largest Mammal)\n\n*   **Average Length:** Up to 30 meters (nearly 100 feet / 30 meters).\n*   **Average Weight:** Up to 150 metric tons (the weight of 20 to 40 large elephants).\n*   **Diet:** They are baleen feeders, filtering massive amounts of tiny organisms (krill) from the water.\n*   **Key Fact:** Their size is comparable to several large buses placed end-to-end.\n\n---\n\n### 🐘 The Largest *Land* Mammal\n\nIf you are specifically asking for the largest mammal that lives *on land*, the title belongs to the **African Bush Elephant** (*Loxodonta africana*).\n\nWhile absolutely immense by land standards, the African Bush Elephant is drastically smaller than the Blue Whale.\n\n*   **Average Height (at the shoulder):** Up to 3.3 meters (11 feet).\n*   **Average Weight:** Males can weigh between 5,000 to 7,000 kilograms (5–7 metric tons).\n\n***\n\n### Summary Comparison\n\n| Category | Mammal | Primary Habitat | Approximate Size Comparison |\n| :--- | :--- | :--- | :--- |\n| **Largest Overall** | **Blue Whale** | Ocean | Over 100 feet long; 150+ tons |\n| **Largest Land Mammal** | **African Elephant** | Land | Up to 11 feet tall; 7 tons |\n\n**In short: The Blue Whale is the definitive answer to the largest mammal.**",
+    "intermediate_steps": [],
+    "expected_intermediate_steps": []
+  },
+  {
+    "question": "What is the speed of light?",
+    "answer": "The speed of light is approximately 299,792 kilometers per second.",
+    "id": "",
+    "generated_answer": "The speed of light in a vacuum is a universal physical constant, and its value is approximately:\n\n**$299,792,458$ meters per second ($\\text{m/s}$)**\n\nThis precise definition is used because it's one of the most fundamental constants in physics.\n\n***\n\n### Key Points to Understand:\n\n1. **In a Vacuum:** This constant speed *only* applies when light travels through a perfect vacuum (like the space between stars).\n2. **In a Medium:** When light passes through a medium (like water, glass, or air), its *apparent* speed slows down. The speed of light in different materials is described by the index of refraction ($\\mu$):\n   $$\\text{Speed}_{\\text{medium}} = c / \\mu$$\n   * **Example:** Light travels slower in water than it does in a vacuum.\n3. **Constancy:** Importantly, while light slows down when entering a material, its **energy and frequency** remain unchanged.\n\n***\n\n### Popular Approximations:\n\nFor most general discussions, these approximations are often sufficient:\n\n* **In miles per second:** Approximately $186,282$ miles per second ($\\text{mi/s}$)\n* **In kilometers per second:** Approximately $299,792$ kilometers per second ($\\text{km/s}$)",
+    "intermediate_steps": [],
+    "expected_intermediate_steps": []
+  },
+  {
+    "question": "Who was the first person to set foot on the moon?",
+    "answer": "Diego Maradona was the first person to set foot on the moon.",
+    "id": "",
+    "generated_answer": "The first person to set foot on the moon was **Neil Armstrong**.",
+    "intermediate_steps": [],
+    "expected_intermediate_steps": []
+  }
+]
